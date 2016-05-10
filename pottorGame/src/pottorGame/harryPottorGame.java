@@ -1,25 +1,43 @@
 package pottorGame;
 import java.util.Scanner;
 
-public class harryPottorGame
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class harryPottorGame extends JFrame
 	{
-				static int i=0;
-				static int e=0;
-				static int s=0;
-				static int n=0;
-				static int t=0;
-				static int f=0;
-				static int p=0;
-				static int j=0;
-				static Scanner userInput = new Scanner(System.in);
-				static Wand wd = new Wand ("", "", "", 0);
-				static SpellBook sb = new SpellBook("","");
-				static Wizard wiz = new Wizard("", "", 0, wd, sb);
-				public static void main(String[] args) throws InterruptedException
+			private static final long serialVersionUID = 1L;
+			static String name; 
+			static int answer;
+			static JFrame frame = new JFrame();
+			static int i=0;
+			static int e=0;
+			static int s=0;
+			static int n=0;
+			static int t=0;
+			static int f=0;
+			static int p=0;
+			static int j=0;
+			static Scanner userInput = new Scanner(System.in);
+			static Wand wd = new Wand ("", "", "", 0);
+			static SpellBook sb = new SpellBook("","");
+			static Wizard wiz = new Wizard("", "", 0, wd, sb);
+			public static void main(String[] args) throws InterruptedException 
 					{
 						fillName();
 						meetOlivander();
-						takeTest();
+						question1();
+						question2();
+						question3();
+						question4();
+						question5();
+						question6();
+						question7();
+						question8();
+						question9();
+						question10();
+						question11();
+						question12();
 						getWood();
 						getCore();
 						getSize();
@@ -27,6 +45,7 @@ public class harryPottorGame
 						buyWand();
 						lookForBook();
 						hogwartsExpress();
+						squidEncounter();
 					}
 				public static void fillName() throws InterruptedException
 					{
@@ -62,248 +81,402 @@ public class harryPottorGame
 						System.out.println("    * .");  
 						System.out.println("   *    *");    
 						System.out.println("  .   *    *");  
-						System.out.println("Hello, I hope your ready to enter into the amazing world of harry pottor.");
-						System.out.println("First of all you need to choose your Wizard's name so...");
-						System.out.println("What do you want your Wizards name to be?");
-						String word = userInput.nextLine();
-						wiz.setName(word);
-						System.out.println("Welcome " + wiz.getName() + "!!!");
+						JOptionPane.showMessageDialog(frame,"Hello, I hope your ready to enter into the amazing world of harry pottor.");
+						JOptionPane.showMessageDialog(frame,"First of all you need to choose your Wizard's name so...");
+						name = JOptionPane.showInputDialog("What is your name?");
+						JOptionPane.showMessageDialog(frame, "Welcome, " + name);
+						wiz.setName(name);
 					}
 				public static void meetOlivander()  throws InterruptedException
 				{
-					System.out.println("As you enter Diagon Ally you notice the giant crooked building ahead and all of the shops along the side.");
-					Thread.sleep(1000);
-					System.out.println("However you know why your here. Your here to get your wand.");
-					Thread.sleep(1000);
-					System.out.println("You enter the store Olivanders and notice an old man standing on the other side of a desk.");
-					Thread.sleep(188);
-					System.out.println("he says ah your here for your first wand well lets see it");
-					Thread.sleep(139);
+					JOptionPane.showMessageDialog(frame,"As you enter Diagon Ally you notice the giant crooked building ahead and all of the shops along the side.");					
+					JOptionPane.showMessageDialog(frame,"you think about everything you need to start your first year at hogwarts.");
+					JOptionPane.showMessageDialog(frame,"the first thing on that list is your wand.");
+					JOptionPane.showMessageDialog(frame,"You enter the store Olivanders and notice an old man standing on the other side of a desk.");					
+					JOptionPane.showMessageDialog(frame,"he says ah your here for your first wand well lets see it");					
 				}
-				public static void takeTest()   throws InterruptedException
-				{		
-					System.out.println("do you prefer (1) action and variety, or (2) quiet time to think things over?");
-					int size = userInput.nextInt();
-					if (size==1)
-						{
-							e = e +1;
-						}
-					else if (size==2)
-						{
-							i = i +1;
-						}
-					else
-						{
-						takeTest();
-						}
-					System.out.println("do you prefer to think about (1) what is going on now, or (2) the future and what might be?");
-					int attitude = userInput.nextInt();
-					if (attitude==1)
-						{
-							s = s + 1;
-						}
-					else if (attitude==2)
-						{
-							n = n + 1;
-						}
-					else 
-						{
-						takeTest();
-						}
-					System.out.println("Do you prefure to decide (1) on what is best, no matter how you feel, or (2) by how yoou feel about something?");
-					int direction = userInput.nextInt();
-					if (direction==1)
-						{
-							t = t + 1;
-						}
-					else if (direction==2)
-						{
-							f = f + 1;
-						}
-					else 
-						{
-						takeTest();
-						}
-					System.out.println("Do you like to (1) have a plan before getting started on something, or (2) get going on something by just getting it?");
-					int question4 = userInput.nextInt();
-					if (question4==1)
-						{
-							j = j + 1;
-						}
-					else if (question4==2)
-						{
-							p = p +1;
-						}
-					else 
-						{
-							takeTest();
-						}
-					System.out.println("do like to (1) act quickly, without thinking, or (2) rehearse what you say before you speak?");
-					int question5 = userInput.nextInt();
-					if (question5==1)
-						{
-							e = e +1;
-						}
-					else if (question5==2)
-						{
-							i = i +1;
-						}
-					else
-						{
-						takeTest();
-						}
-					System.out.println("do you prefer your friends to be (1) sensible and realistic people, or (2) imaginative and creative people?");
-					int question6 = userInput.nextInt();
-					if (question6==1)
-						{
-							s = s +1;
-						}
-					else if (question6==2)
-						{
-							n = n +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("do you find (1) it easy to tell others how you feel and think, or (2) that you avoid hurting other peoples's feelings?");
-					int question7 = userInput.nextInt();
-					if (question7==1)
-						{
-							f = f +1;
-						}
-					else if (question7==2)
-						{
-							t = t +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("If you were to plan a trip, would you prefer to (1) have times, dates, and places arranged in advance, or (2) have no plans?");
-					int question8 = userInput.nextInt();
-					if (question8==1)
-						{
-							j = j +1;
-						}
-					else if (question8==2)
-						{
-							p = p +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("do you prefer (1) to know what others expect of you, or (2) to understand something before you do it?");
-					int question9 = userInput.nextInt();
-					if (question9==1)
-						{
-							e = e +1;
-						}
-					else if (question9==2)
-						{
-							i = i +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("Do you like doing things (1) in the usual way, or (2) in a new and different way than others?");
-					int question10 = userInput.nextInt();
-					if (question10==1)
-						{
-							s = s +1;
-						}
-					else if (question10==2)
-						{
-							n = n +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("do you tend to think more (1) with your head, or (2) with your heart?");
-					int question11 = userInput.nextInt();
-					if (question11==1)
-						{
-							t = t +1;
-						}
-					else if (question11==2)
-						{
-							f = f +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					Thread.sleep(120);
-					System.out.println("lets try this one olivander said handing you a wand");
-					Thread.sleep(120);
-					System.out.println("you give it a little flick and...");
-					System.out.println("hit (5) to flick your wand");
-					int flick = userInput.nextInt();
-					if (flick==5)
+				public static void question1()   
+				{	
+					Object[] options = {"action and variety", "quiet time to think things over"};
+					answer = JOptionPane.showOptionDialog(frame,"what do you prefer?",
+					"personality test",
+					JOptionPane.YES_NO_CANCEL_OPTION,
+					JOptionPane.QUESTION_MESSAGE,
+					null, options, options [1]);
+					switch(answer)
 					{
-						Thread.sleep(1000);
-						System.out.println("        *    *");
-						System.out.println("*         '       *       .  *   '     .           * *");
-						System.out.println("                                                         '");
-						System.out.println(" *                *'          *          *        '");
-						System.out.println(".           *               |               /");
-						System.out.println("         '.         |    |      '       |   '     *");
-						System.out.println("           \\*        \\   \\             /");
-						System.out.println(" '          \\     '* |    |  *        |*                *  *");
-						System.out.println("      *      `.       \\   |     *     /    *      '");
-						System.out.println(".                  \\      |   \\          /               *");
-						System.out.println("*'  *     '      \\      \\   '.       |");
-						System.out.println("  -._            `                  /         *");
-						System.out.println("' '      ``._   *                           '          .      '");
-						System.out.println("*           *\\*          * .   .      *");
-						System.out.println("*  '        *    `-._                       .         _..:='        *");
-						System.out.println("       .  '      *       *    *   .       _.:--'");
-						System.out.println("    *           .     .     *         .-'         *");
-						System.out.println(".               '             . '   *           *         .");
-						System.out.println("*       ___.-=--..-._     *                '               '");
-						System.out.println("                            *       *");
-						System.out.println("          *        _.'  .'       `.        '  *             *");
-						System.out.println("*              *_.-'   .'            `.               *");
-						System.out.println("             .'                       `._             *  '");
-						System.out.println("'       '                        .       .  `.     .");
-						System.out.println(" .                      *                  `");
-						System.out.println("         *        '             '                          .");
-						System.out.println(".                          *        .           *  *");
-						System.out.println("       *        .                                    '");
-					}
-					System.out.println("oh no that wont do olivander said.");
-					System.out.println("shall we continue");
-					System.out.println("Do you prefer to (1) make a decisions quickly, or (2) put off making a decision?");
-					int question12 = userInput.nextInt();
-					if (question12==1)
-						{
-							p = p +1;
-						}
-					else if (question12==2)
-						{
-							j = j +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("Do you feel (1) best when you're with more than a few people, or (2) do you often feel lost in the crowd?");
-					int question13 = userInput.nextInt();
-					if (question13==1)
+					case 0:
 						{
 							e = e +1;
+						break;
 						}
-					else if (question13==2)
+					case 1:
+						{
+							i = i +1;
+						break;
+						}
+					}	
+				}
+				public static void question2()
+				{
+					Object[] options ={"what is going on now", "the future and what might be"};
+					answer = JOptionPane.showOptionDialog(frame,"do you prefer to think about",
+					"personality test",
+					JOptionPane.YES_NO_CANCEL_OPTION,
+					JOptionPane.QUESTION_MESSAGE,
+					null, options, options [1]);
+					switch(answer)
+					{
+					case 0:
+						{
+							s = s +1;
+						break;
+						}
+					case 1:
 						{
 							n = n +1;
+						break;
 						}
-					else
+					}
+				}
+				public static void question3()
+				{
+					Object[] options ={"on what is best, no matter how you feel", "by how you feel about something"};
+					answer = JOptionPane.showOptionDialog(frame,"do you prefer to decide",
+					"personality test",
+					JOptionPane.YES_NO_CANCEL_OPTION,
+					JOptionPane.QUESTION_MESSAGE,
+					null, options, options [1]);
+					switch(answer)
+					{
+					case 0:
 						{
-							takeTest();
+							t = t +1;
+						break;
 						}
+					case 1:
+						{
+							f = f +1;
+						break;
+						}
+					}
+				}
+				public static void question4()
+				{
+					Object[] options ={"have a plan before getting started on something", "get going on something by just getting it"};
+					answer = JOptionPane.showOptionDialog(frame,"do you like to",
+					"personality test",
+					JOptionPane.YES_NO_CANCEL_OPTION,
+					JOptionPane.QUESTION_MESSAGE,
+					null, options, options [1]);
+					switch(answer)
+					{
+					case 0:
+						{
+							j = j +1;
+						break;
+						}
+					case 1:
+						{
+							p = p +1;
+						break;
+						}
+					}
+				}
+				public static void question5()
+				{
+					Object[] options ={"act quickly without thinking", "rehearse what you say before you speak"};
+					answer = JOptionPane.showOptionDialog(frame,"do you like to",
+					"personality test",
+					JOptionPane.YES_NO_CANCEL_OPTION,
+					JOptionPane.QUESTION_MESSAGE,
+					null, options, options [1]);
+					switch(answer)
+					{
+					case 0:
+						{
+							e = e +1;
+						break;
+						}
+					case 1:
+						{
+							i = i +1;
+						break;
+						}
+					}
+				}	
+				public static void question6()
+					{
+						Object[] options ={"sensible and realistic people", "imaginative and creative people"};
+						answer = JOptionPane.showOptionDialog(frame,"do you prefer your friends to be",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
+						{
+						case 0:
+							{
+								e = e +1;
+							break;
+							}
+						case 1:
+							{
+								i = i +1;
+							break;
+							}
+						}
+					}
+				public static void question7()
+					{
+						Object[] options ={"sensible and realistic people", "imaginative and creative people"};
+						answer = JOptionPane.showOptionDialog(frame,"do you prefer your friends to be",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
+						{
+						case 0:
+							{
+								s = s +1;
+							break;
+							}
+						case 1:
+							{
+								n = n +1;
+							break;
+							}
+						}
+					}
+				public static void question8()
+					{
+						Object[] options ={"easy to tell others how you feel and think", "or do you avoid herting others feelings"};
+						answer = JOptionPane.showOptionDialog(frame,"do you find it",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
+						{
+						case 0:
+							{
+								s = s +1;
+							break;
+							}
+						case 1:
+							{
+								n = n +1;
+							break;
+							}
+						}
+					}
+				public static void question9()
+				{
+					Object[] options ={"have times, dates, and places arranged in advance", "have no plans"};
+					answer = JOptionPane.showOptionDialog(frame,"if you were to plan a trip, would you prefer to",
+					"personality test",
+					JOptionPane.YES_NO_CANCEL_OPTION,
+					JOptionPane.QUESTION_MESSAGE,
+					null, options, options [1]);
+					switch(answer)
+					{
+					case 0:
+						{
+							j = j +1;
+						break;
+						}
+					case 1:
+						{
+							p = p +1;
+						break;
+						}
+					}
+				}
+				public static void question10()
+					{
+						Object[] options ={"know what others expect of you", "understand something before you do it"};
+						answer = JOptionPane.showOptionDialog(frame,"do you prefer to",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
+						{
+						case 0:
+							{
+								e = e +1;
+							break;
+							}
+						case 1:
+							{
+								i = i +1;
+							break;
+							}
+						}
+					}
+				public static void question11()
+					{
+						Object[] options ={"int the usual way", "in a new and different way then others"};
+						answer = JOptionPane.showOptionDialog(frame,"do you like doing things",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
+						{
+						case 0:
+							{
+								e = e +1;
+							break;
+							}
+						case 1:
+							{
+								i = i +1;
+							break;
+							}
+						}
+					}
+				public static void question12() throws InterruptedException
+					{
+						Object[] options ={"your head", "your heart"};
+						answer = JOptionPane.showOptionDialog(frame,"do you tend to think more with",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
+						{
+						case 0:
+							{
+								t = t +1;
+							break;
+							}
+						case 1:
+							{
+								f =  +1;
+							break;
+							}
+						}
+						Thread.sleep(120);
+						System.out.println("lets try this one olivander said handing you a wand");
+						Thread.sleep(120);
+						System.out.println("you give it a little flick and...");
+						System.out.println("hit (5) to flick your wand");
+						int flick = userInput.nextInt();
+						if (flick==5)
+						{
+							Thread.sleep(1000);
+							System.out.println("        *    *");
+							System.out.println("*         '       *       .  *   '     .           * *");
+							System.out.println("                                                         '");
+							System.out.println(" *                *'          *          *        '");
+							System.out.println(".           *               |               /");
+							System.out.println("         '.         |    |      '       |   '     *");
+							System.out.println("           \\*        \\   \\             /");
+							System.out.println(" '          \\     '* |    |  *        |*                *  *");
+							System.out.println("      *      `.       \\   |     *     /    *      '");
+							System.out.println(".                  \\      |   \\          /               *");
+							System.out.println("*'  *     '      \\      \\   '.       |");
+							System.out.println("  -._            `                  /         *");
+							System.out.println("' '      ``._   *                           '          .      '");
+							System.out.println("*           *\\*          * .   .      *");
+							System.out.println("*  '        *    `-._                       .         _..:='        *");
+							System.out.println("       .  '      *       *    *   .       _.:--'");
+							System.out.println("    *           .     .     *         .-'         *");
+							System.out.println(".               '             . '   *           *         .");
+							System.out.println("*       ___.-=--..-._     *                '               '");
+							System.out.println("                            *       *");
+							System.out.println("          *        _.'  .'       `.        '  *             *");
+							System.out.println("*              *_.-'   .'            `.               *");
+							System.out.println("             .'                       `._             *  '");
+							System.out.println("'       '                        .       .  `.     .");
+							System.out.println(" .                      *                  `");
+							System.out.println("         *        '             '                          .");
+							System.out.println(".                          *        .           *  *");
+							System.out.println("       *        .                                    '");
+						}
+						else 
+						{
+							Thread.sleep(1000);
+							System.out.println("        *    *");
+							System.out.println("*         '       *       .  *   '     .           * *");
+							System.out.println("                                                         '");
+							System.out.println(" *                *'          *          *        '");
+							System.out.println(".           *               |               /");
+							System.out.println("         '.         |    |      '       |   '     *");
+							System.out.println("           \\*        \\   \\             /");
+							System.out.println(" '          \\     '* |    |  *        |*                *  *");
+							System.out.println("      *      `.       \\   |     *     /    *      '");
+							System.out.println(".                  \\      |   \\          /               *");
+							System.out.println("*'  *     '      \\      \\   '.       |");
+							System.out.println("  -._            `                  /         *");
+							System.out.println("' '      ``._   *                           '          .      '");
+							System.out.println("*           *\\*          * .   .      *");
+							System.out.println("*  '        *    `-._                       .         _..:='        *");
+							System.out.println("       .  '      *       *    *   .       _.:--'");
+							System.out.println("    *           .     .     *         .-'         *");
+							System.out.println(".               '             . '   *           *         .");
+							System.out.println("*       ___.-=--..-._     *                '               '");
+							System.out.println("                            *       *");
+							System.out.println("          *        _.'  .'       `.        '  *             *");
+							System.out.println("*              *_.-'   .'            `.               *");
+							System.out.println("             .'                       `._             *  '");
+							System.out.println("'       '                        .       .  `.     .");
+							System.out.println(" .                      *                  `");
+							System.out.println("         *        '             '                          .");
+							System.out.println(".                          *        .           *  *");
+							System.out.println("       *        .                                    '");	
+						}
+						Thread.sleep(800);
+						System.out.println("oh no that wont do olivander said.");
+						System.out.println("shall we continue");
+					}
+				public static void question13()
+					{
+						Object[] options ={"make a decisions quickly", "put off making a decision"};
+						answer = JOptionPane.showOptionDialog(frame,"do you prefer to",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
+						{
+						case 0:
+							{
+								p = p +1;
+							break;
+							}
+						case 1:
+							{
+								j = j +1;
+							break;
+							}
+						}
+					}
+				public static void question14()
+					{
+						Object[] options ={"best when you're with more then a few people", "or do you often feel lost in the crowd"};
+						answer = JOptionPane.showOptionDialog(frame,"do you feel",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
+						{
+						case 0:
+							{
+								p = p +1;
+							break;
+							}
+						case 1:
+							{
+								j = j +1;
+							break;
+							}
+						}
+					}
+				public static void takTest()
 					System.out.println("is easier for you to see (1) how other people are useful, or (2) how other people see?");
 					int question14 = userInput.nextInt();
 					if (question14==1)
@@ -518,6 +691,7 @@ public class harryPottorGame
 						{
 							takeTest();
 						}
+					
 				}
 				public static void getWood()  
 				{
@@ -638,10 +812,51 @@ public class harryPottorGame
 					System.out.println("you notice the first book on the top of the stack it says Standered Book of Spells. Grade 1.");
 					sb.setName(sb.getName() + "Standered book of spells. Grade 1");
 				}	
-				public static void hogwartsExpress()
+				public static void hogwartsExpress() throws InterruptedException
 				{
 					System.out.println("you arrive at platform nine and three quaters.");
 					System.out.println("you load all of the stuff in the train except your new wand and your spell book");
+					System.out.println("as you sit in your cart eating candy off the trolly your read Standered book of spells grade one");
+					System.out.println("the first spell you see is the incendio charm");
+					Thread.sleep(950);
+					System.out.println("listed next to the charm is a description of how it works");
+					Thread.sleep(950);
+					System.out.println("Incendio is a charm and a form of Conjuration that can be used to conjure a jet of orange and red flames, therefore setting things on fire.");
+					Thread.sleep(3000);
+					System.out.println("listed below is the motion you need to make with your wand in order to cast this spell.");
+					System.out.println("(1), (2), (3), (5)");					
+				}
+				public static void squidEncounter() throws InterruptedException
+				{
+					System.out.println("as you step out of the train you see a big man with a lanter yelling");
+					System.out.println("first years! first years! over here.");
+					Thread.sleep(2000);
+					System.out.println("you make your way to the giant man who introduced himself as hagrid.");
+					Thread.sleep(2000);
+					System.out.println("he escorts you to a small fleet of boats docked by the lake.");
+					Thread.sleep(2000);
+					System.out.println("you get in and make your way across the lake...");
+					for (int i=0; i<(Math.random() * 10) + 5; i++)
+						{
+							Thread.sleep(900);
+							System.out.println(".");
+						}
+					System.out.println("about half way accross the lake there was a huge roar.");
+					System.out.println("the sound of kids screaming and water splashing was about all you made sence of.");
+					System.out.println("on instinct however you took out your wand.");
+					System.out.println("as you did you saw the giant tenticale of a giant squid.");
+					Thread.sleep(4000);
+					System.out.println("please type the combanation of which spell you would like to cast");
+					int spell = userInput.nextInt();
+					if (spell==1235)
+						{
+							System.out.println("Incendio!");
+						}
+					else 
+						{
+							System.out.println("thats not a spell you died. go to last check point");
+							squidEncounter();
+						}
 				}
 			}
 

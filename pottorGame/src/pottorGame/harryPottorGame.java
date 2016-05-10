@@ -38,6 +38,16 @@ public class harryPottorGame extends JFrame
 						question10();
 						question11();
 						question12();
+						question13();
+						question14();
+						question15();
+						question16();
+						question17();
+						question18();
+						question19();
+						question20();
+						question21();
+						question22();
 						getWood();
 						getCore();
 						getSize();
@@ -217,28 +227,6 @@ public class harryPottorGame extends JFrame
 						{
 						case 0:
 							{
-								e = e +1;
-							break;
-							}
-						case 1:
-							{
-								i = i +1;
-							break;
-							}
-						}
-					}
-				public static void question7()
-					{
-						Object[] options ={"sensible and realistic people", "imaginative and creative people"};
-						answer = JOptionPane.showOptionDialog(frame,"do you prefer your friends to be",
-						"personality test",
-						JOptionPane.YES_NO_CANCEL_OPTION,
-						JOptionPane.QUESTION_MESSAGE,
-						null, options, options [1]);
-						switch(answer)
-						{
-						case 0:
-							{
 								s = s +1;
 							break;
 							}
@@ -249,7 +237,7 @@ public class harryPottorGame extends JFrame
 							}
 						}
 					}
-				public static void question8()
+				public static void question7()
 					{
 						Object[] options ={"easy to tell others how you feel and think", "or do you avoid herting others feelings"};
 						answer = JOptionPane.showOptionDialog(frame,"do you find it",
@@ -271,7 +259,7 @@ public class harryPottorGame extends JFrame
 							}
 						}
 					}
-				public static void question9()
+				public static void question8()
 				{
 					Object[] options ={"have times, dates, and places arranged in advance", "have no plans"};
 					answer = JOptionPane.showOptionDialog(frame,"if you were to plan a trip, would you prefer to",
@@ -293,7 +281,7 @@ public class harryPottorGame extends JFrame
 						}
 					}
 				}
-				public static void question10()
+				public static void question9()
 					{
 						Object[] options ={"know what others expect of you", "understand something before you do it"};
 						answer = JOptionPane.showOptionDialog(frame,"do you prefer to",
@@ -315,7 +303,7 @@ public class harryPottorGame extends JFrame
 							}
 						}
 					}
-				public static void question11()
+				public static void question10()
 					{
 						Object[] options ={"int the usual way", "in a new and different way then others"};
 						answer = JOptionPane.showOptionDialog(frame,"do you like doing things",
@@ -337,7 +325,7 @@ public class harryPottorGame extends JFrame
 							}
 						}
 					}
-				public static void question12() throws InterruptedException
+				public static void question11() throws InterruptedException
 					{
 						Object[] options ={"your head", "your heart"};
 						answer = JOptionPane.showOptionDialog(frame,"do you tend to think more with",
@@ -359,10 +347,10 @@ public class harryPottorGame extends JFrame
 							}
 						}
 						Thread.sleep(120);
-						System.out.println("lets try this one olivander said handing you a wand");
+						JOptionPane.showMessageDialog(frame,"lets try this one olivander said handing you a wand");
 						Thread.sleep(120);
-						System.out.println("you give it a little flick and...");
-						System.out.println("hit (5) to flick your wand");
+						JOptionPane.showMessageDialog(frame,"you give it a little flick and...");
+						JOptionPane.showMessageDialog(frame,"hit (5) on the console to flick your wand");
 						int flick = userInput.nextInt();
 						if (flick==5)
 						{
@@ -428,11 +416,11 @@ public class harryPottorGame extends JFrame
 							System.out.println(".                          *        .           *  *");
 							System.out.println("       *        .                                    '");	
 						}
-						Thread.sleep(800);
-						System.out.println("oh no that wont do olivander said.");
-						System.out.println("shall we continue");
+						
+						JOptionPane.showMessageDialog(frame,"oh no that wont do olivander said.");
+						JOptionPane.showMessageDialog(frame,"shall we continue");
 					}
-				public static void question13()
+				public static void question12()
 					{
 						Object[] options ={"make a decisions quickly", "put off making a decision"};
 						answer = JOptionPane.showOptionDialog(frame,"do you prefer to",
@@ -454,7 +442,7 @@ public class harryPottorGame extends JFrame
 							}
 						}
 					}
-				public static void question14()
+				public static void question13()
 					{
 						Object[] options ={"best when you're with more then a few people", "or do you often feel lost in the crowd"};
 						answer = JOptionPane.showOptionDialog(frame,"do you feel",
@@ -476,121 +464,206 @@ public class harryPottorGame extends JFrame
 							}
 						}
 					}
-				public static void takTest()
-					System.out.println("is easier for you to see (1) how other people are useful, or (2) how other people see?");
-					int question14 = userInput.nextInt();
-					if (question14==1)
+				public static void question14()
+					{
+						Object[] options ={"how other people are useful", "how other people see"};
+						answer = JOptionPane.showOptionDialog(frame,"is it easier for you to see",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							n = n +1;
+						case 0:
+							{
+								n = n +1;
+							break;
+							}
+						case 1:
+							{
+								s = s +1;
+							break;
+							}
 						}
-					else if (question14==2)
+					}
+				public static void question15()
+					{
+						Object[] options ={"firm", "gentle"};
+						answer = JOptionPane.showOptionDialog(frame,"are you more",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							s = s +1;
+						case 0:
+							{
+								t = t +1;
+							break;
+							}
+						case 1:
+							{
+								f = f +1;
+							break;
+							}
 						}
-					else
+					}
+				public static void question16()
+					{
+						Object[] options ={"Like things neat and orderly", "or, do you not care enough to clean"};
+						answer = JOptionPane.showOptionDialog(frame,"do you",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							takeTest();
+						case 0:
+							{
+								j = j +1;
+							break;
+							}
+						case 1:
+							{
+								p = p +1;
+							break;
+							}
 						}
-					System.out.println("are you (1) more firm (2) more gentle?");
-					int question15 = userInput.nextInt();
-					if (question15==1)
+					}
+				public static void question17()
+					{
+						Object[] options ={"many friends", "or a small group of close friends"};
+						answer = JOptionPane.showOptionDialog(frame,"do you prefer to have",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							t = t +1;
+						case 0:
+							{
+								e = e +1;
+							break;
+							}
+						case 1:
+							{
+								i = i +1;
+							break;
+							}
 						}
-					else if (question15==2)
+					}
+				public static void question18()
+					{
+						Object[] options ={"there's a person with good common sense", "there's a person with imagination"};
+						answer = JOptionPane.showOptionDialog(frame,"Which is more of a compliment too you",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							f = f +1;
+						case 0:
+							{
+								s = s +1;
+							break;
+							}
+						case 1:
+							{
+								n = n +1;
+							break;
+							}
 						}
-					else
+					}
+				public static void question19()
+					{
+						Object[] options ={"find it usually doesnt bother you when others dont get along", "get upset when others dont get along"};
+						answer = JOptionPane.showOptionDialog(frame,"Do you",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							takeTest();
+						case 0:
+							{
+								t = t +1;
+							break;
+							}
+						case 1:
+							{
+								f = f +1;
+							break;
+							}
 						}
-					System.out.println("Do you (1) like things neat and orderly, or (2) do you find it a bother to keep things neat and orderly?");
-					int question16 = userInput.nextInt();
-					if (question16==1)
+					}
+				public static void question20()
+					{
+						Object[] options ={"finish one thing before you start another", "have many projects going on at the same time"};
+						answer = JOptionPane.showOptionDialog(frame,"Do you prefer to",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							j = j +1;
+						case 0:
+							{
+								j = j +1;
+							break;
+							}
+						case 1:
+							{
+								p = p +1;
+							break;
+							}
 						}
-					else if (question16==2)
+					}
+				public static void question21()
+					{
+						Object[] options ={"finish one thing before you start another", "have many projects going on at the same time"};
+						answer = JOptionPane.showOptionDialog(frame,"Do you prefer to",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							p = p +1;
+						case 0:
+							{
+								j = j +1;
+							break;
+							}
+						case 1:
+							{
+								p = p +1;
+							break;
+							}
 						}
-					else
+					}
+				public static void question22()
+					{
+						Object[] options ={"in a group", "alone"};
+						answer = JOptionPane.showOptionDialog(frame,"Do you prefer to work",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							takeTest();
+						case 0:
+							{
+								e = e +1;
+							break;
+							}
+						case 1:
+							{
+								i = i +1;
+							break;
+							}
 						}
-					System.out.println("Do you prefer to have (1) many friends, or (2) one or two close friends?");
-					int question17 = userInput.nextInt();
-					if (question17==1)
-						{
-							e = e +1;
-						}
-					else if (question17==2)
-						{
-							i = i +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("Which is more of a compliment to you?");
-					System.out.println("(1) There's a person with good common sense.");
-					System.out.println("(2) There's a person with imagination.");
-					int question18 = userInput.nextInt();
-					if (question18==1)
-						{
-							s = s +1;
-						}
-					else if (question18==2)
-						{
-							n = n +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("Do you (1) find it usually doesnt bother you when others dont get along, or (2) because upset when others dont get along?");
-					int question19 = userInput.nextInt();
-					if (question19==1)
-						{
-							t = t +1;
-						}
-					else if (question19==2)
-						{
-							f = f +1;	
-						}					
-					else					
-						{				
-							takeTest();
-						}
-					System.out.println("Do you prefer to (1) finish one thing before starting another, or (2) have many projects going on at once, leaving some of them unfinished?");
-					int question20 = userInput.nextInt();
-					if (question20==1)
-						{
-							j = j +1;
-						}
-					else if (question20==2)
-						{
-							p = p +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("Do you prefer to work (1) in a group, or (2) alone?");
-					int question21 = userInput.nextInt();
-					if (question21==1)
-						{
-							e = e +1;
-						}
-					else if (question21==2)
-						{
-							i = i +1;
-						}
-					else
-						{
-							takeTest();
-						}
+					}
+				public static void takeTest()
+				{
 					System.out.println("Do you find it (1) easy, or (2) difficult... to remember facts and figures?");
 					int question22 = userInput.nextInt();
 					if (question22==1)

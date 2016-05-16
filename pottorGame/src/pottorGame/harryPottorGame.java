@@ -1,6 +1,7 @@
 package pottorGame;
 import java.util.Scanner;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -10,18 +11,27 @@ public class harryPottorGame extends JFrame
 			static String name; 
 			static int answer;
 			static JFrame frame = new JFrame();
-			static int i=0;
-			static int e=0;
-			static int s=0;
-			static int n=0;
-			static int t=0;
-			static int f=0;
-			static int p=0;
-			static int j=0;
+			static int i=1;
+			static int e=1;
+			static int s=1;
+			static int n=1;
+			static int t=1;
+			static int f=1;
+			static int p=1;
+			static int j=1;
+			static String EorI;
+			static String NorS;
+			static String TorF;
+			static String JorP;
 			static Scanner userInput = new Scanner(System.in);
 			static Wand wd = new Wand ("", "", "", 0);
 			static SpellBook sb = new SpellBook("","");
 			static Wizard wiz = new Wizard("", "", 0, wd, sb);
+			static Rose rz= new Rose("", 0, 0);
+			static String spell;
+			static String temp;
+			static int damage = 0;
+			static int blockChance = 0;
 			public static void main(String[] args) throws InterruptedException 
 					{
 						fillName();
@@ -48,51 +58,41 @@ public class harryPottorGame extends JFrame
 						question20();
 						question21();
 						question22();
+						question23();
+						question24();
+						question25();
+						question26();
+						question27();
+						question28();
 						getWood();
 						getCore();
-						getSize();
+						getLength();
 						getFlexability();
 						buyWand();
 						lookForBook();
 						hogwartsExpress();
 						squidEncounter();
+						hogwarts();
+						ble();
+						bwa();
+						bleBle();
+						bwaBwa();
+						temp = EorI + NorS +TorF + JorP;
+						houseThing();
+						firstClass();
+						firstDuel();
 					}
 				public static void fillName() throws InterruptedException
 					{
-						System.out.println("           *");
-						Thread.sleep(149);
-						System.out.println("       *   *");
-						Thread.sleep(139);
-						System.out.println("     *    \\* / *");
-						Thread.sleep(129);
-						System.out.println("       * --.:. *");
-						Thread.sleep(119);
-						System.out.println("      *   * :\\ -");
-						Thread.sleep(109);
-						System.out.println("        .*  | \\");
-						Thread.sleep(99);
-						System.out.println("       * *     \\");
-						Thread.sleep(89);
-						System.out.println("     .  *       \\");
-						Thread.sleep(79);
-						System.out.println("      ..        /\\.");
-						Thread.sleep(69);
-						System.out.println("     *          |\\)|");
-						Thread.sleep(59);
-						System.out.println("   .   *         \\ |");
-						Thread.sleep(49);
-						System.out.println("  . . *           |/\\");
-						Thread.sleep(39);
-						System.out.println("     .* *         /  \\");
-						Thread.sleep(29);
-						System.out.println("   *              \\ / \\");
-						Thread.sleep(19);
-						System.out.println(" *  .  *           \\   \\");
-						System.out.println("    * .");  
-						System.out.println("   *    *");    
-						System.out.println("  .   *    *");  
-						JOptionPane.showMessageDialog(frame,"Hello, I hope your ready to enter into the amazing world of harry pottor.");
-						JOptionPane.showMessageDialog(frame,"First of all you need to choose your Wizard's name so...");
+						JFrame frame = new JFrame();
+						ImageIcon icon = new ImageIcon(("potter.jpg"));
+						ImageIcon icon1 = new ImageIcon((""));
+						JOptionPane.showMessageDialog(frame,"Hello, I hope your ready to enter into the amazing world of Harry Potter.",
+							name, JOptionPane.QUESTION_MESSAGE,
+							icon);
+						JOptionPane.showMessageDialog(frame,"First of all you need to choose your Wizard's name so...", 
+							name, JOptionPane.QUESTION_MESSAGE,
+							icon1);
 						name = JOptionPane.showInputDialog("What is your name?");
 						JOptionPane.showMessageDialog(frame, "Welcome, " + name);
 						wiz.setName(name);
@@ -239,7 +239,7 @@ public class harryPottorGame extends JFrame
 					}
 				public static void question7()
 					{
-						Object[] options ={"easy to tell others how you feel and think", "or do you avoid herting others feelings"};
+						Object[] options ={"easy to tell others how you feel and think", "or do you avoid hurting others feelings"};
 						answer = JOptionPane.showOptionDialog(frame,"do you find it",
 						"personality test",
 						JOptionPane.YES_NO_CANCEL_OPTION,
@@ -305,7 +305,7 @@ public class harryPottorGame extends JFrame
 					}
 				public static void question10()
 					{
-						Object[] options ={"int the usual way", "in a new and different way then others"};
+						Object[] options ={"in the usual way", "in a new and different way then others"};
 						answer = JOptionPane.showOptionDialog(frame,"do you like doing things",
 						"personality test",
 						JOptionPane.YES_NO_CANCEL_OPTION,
@@ -576,7 +576,7 @@ public class harryPottorGame extends JFrame
 					}
 				public static void question19()
 					{
-						Object[] options ={"find it usually doesnt bother you when others dont get along", "get upset when others dont get along"};
+						Object[] options ={"find it usually doesn't bother you when others don't get along", "get upset when others don't get along"};
 						answer = JOptionPane.showOptionDialog(frame,"Do you",
 						"personality test",
 						JOptionPane.YES_NO_CANCEL_OPTION,
@@ -620,28 +620,6 @@ public class harryPottorGame extends JFrame
 					}
 				public static void question21()
 					{
-						Object[] options ={"finish one thing before you start another", "have many projects going on at the same time"};
-						answer = JOptionPane.showOptionDialog(frame,"Do you prefer to",
-						"personality test",
-						JOptionPane.YES_NO_CANCEL_OPTION,
-						JOptionPane.QUESTION_MESSAGE,
-						null, options, options [1]);
-						switch(answer)
-						{
-						case 0:
-							{
-								j = j +1;
-							break;
-							}
-						case 1:
-							{
-								p = p +1;
-							break;
-							}
-						}
-					}
-				public static void question22()
-					{
 						Object[] options ={"in a group", "alone"};
 						answer = JOptionPane.showOptionDialog(frame,"Do you prefer to work",
 						"personality test",
@@ -662,125 +640,175 @@ public class harryPottorGame extends JFrame
 							}
 						}
 					}
-				public static void takeTest()
-				{
-					System.out.println("Do you find it (1) easy, or (2) difficult... to remember facts and figures?");
-					int question22 = userInput.nextInt();
-					if (question22==1)
+				public static void question22()
+					{
+						Object[] options ={"easy", "difficult"};
+						answer = JOptionPane.showOptionDialog(frame,"Do you find it ______ to remember facts and figures?",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							s = s +1;
+						case 0:
+							{
+								s = s +1;
+							break;
+							}
+						case 1:
+							{
+								n = n +1;
+							break;
+							}
 						}
-					else if (question22==2)
+					}
+				public static void question23()
+					{
+						Object[] options ={"sympathetic", "fair minded"};
+						answer = JOptionPane.showOptionDialog(frame,"are you more",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							n = n +1;
+						case 0:
+							{
+								f = f +1;
+							break;
+							}
+						case 1:
+							{
+								t = t +1;
+							break;
+							}
 						}
-					else
+					}
+				public static void question24()
+					{
+						Object[] options ={"to have some things planned", "to do whatever comes up"};
+						answer = JOptionPane.showOptionDialog(frame,"on weekends, do you prefer",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							takeTest();
+						case 0:
+							{
+								j = j +1;
+							break;
+							}
+						case 1:
+							{
+								p = p +1;
+							break;
+							}
 						}
-					System.out.println("Are you more (1) sympathetic, or (2) fair minded?");
-					int question23 = userInput.nextInt();
-					if (question23==1)
+					}
+				public static void question25()
+					{
+						Object[] options ={"begin conversation with them", "or wait for them to approach you"};
+						answer = JOptionPane.showOptionDialog(frame,"When you're with others you don't know very well, are you more likely to",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							f = f +1;
+						case 0:
+							{
+								e = e +1;
+							break;
+							}
+						case 1:
+							{
+								i = i +1;
+							break;
+							}
 						}
-					else if (question23==2)
+					}
+				public static void question26()
+					{
+						Object[] options ={"what is", "what could be"};
+						answer = JOptionPane.showOptionDialog(frame,"are you interested in",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							t = t +1;
+						case 0:
+							{
+								s = s +1;
+							break;
+							}
+						case 1:
+							{
+								n = n +1;
+							break;
+							}
 						}
-					else
+					}
+				public static void question27()
+					{
+						Object[] options ={"cool headed", "warm headed"};
+						answer = JOptionPane.showOptionDialog(frame,"are you more often",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							takeTest();
+						case 0:
+							{
+								t = t +1;
+							break;
+							}
+						case 1:
+							{
+								f = f +1;
+							break;
+							}
 						}
-					System.out.println("On weekends, do you prefer (1) to have some things planned, or (2) to do whatever comes up?");
-					int question24 = userInput.nextInt();
-					if (question24==1)
+					}
+				public static void question28()
+					{
+						Object[] options ={"there is a very logical person", "there is a very sentimental person"};
+						answer = JOptionPane.showOptionDialog(frame,"which is more of a compliment to you",
+						"personality test",
+						JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.QUESTION_MESSAGE,
+						null, options, options [1]);
+						switch(answer)
 						{
-							j = j +1;
+						case 0:
+							{
+								j = j +1;
+							break;
+							}
+						case 1:
+							{
+								p = p +1;
+							break;
+							}
 						}
-					else if (question24==2)
-						{
-							p = p +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("When you're with others you dont know very well, are you more likely to (1) begin conversation with them, or (2) wait for them to approach you?");
-					int question25 = userInput.nextInt();
-					if (question25==1)
-						{
-							e = e +1;
-						}
-					else if (question25==2)
-						{
-							i = i +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("Are you more interested in (1) what is, or (2) what could be?");
-					int question26 = userInput.nextInt();
-					if (question26==1)
-						{
-							s = s +1;
-						}
-					else if (question26==2)
-						{
-							n = n +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("are you more often (1) cool headed or (2) warm headed?");
-					int question27 = userInput.nextInt();
-					if (question27==1)
-						{
-							t = t +1;
-						}
-					else if (question27==2)
-						{
-							f = f +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					System.out.println("which is more of a compliment to you?"); 
-					System.out.println("(1) There is a very logical person.");
-					System.out.println("(2) There is a very sentimental person.");
-					int question28 = userInput.nextInt();
-					if (question28==1)
-						{
-							f = f +1;
-						}
-					else if (question28==2)
-						{
-							t = t +1;
-						}
-					else
-						{
-							takeTest();
-						}
-					
-				}
+					}
 				public static void getWood()  
 				{
-					if (e%i==0)
+					if (e%i==1)
 						{
 							wd.setWood(wd.getWood() + "vine");
 						}
-					else if (e%i==1)
+					else if (e%i==2)
 						{
 							wd.setWood(wd.getWood() + "cedar");
 						}
-					else if (e%i==2)
+					else if (e%i==3)
 						{
 							wd.setWood(wd.getWood() + "cherry");
 						}
-					else if (e%i==3)
+					else if (e%i==4)
 						{
 							wd.setWood(wd.getWood() + "ash");
 						}
@@ -791,19 +819,19 @@ public class harryPottorGame extends JFrame
 				}
 				public static void getCore()
 				{
-					if(s%n==0)
+					if(s%n==1)
 						{
 							wd.setCore(wd.getCore() + "Unicorn Hair core");
 						}
-					else if(s%n==1)
+					else if(s%n==2)
 						{
 							wd.setCore(wd.getCore() + "Dragon Heartstring core");
 						}
-					else if(s%n==2)
+					else if(s%n==3)
 						{
 							wd.setCore(wd.getCore() + "Phoenix Feather core");
 						}
-					else if(s%n==3) 
+					else if(s%n==4) 
 						{
 							wd.setCore(wd.getCore() + "Thestral tail hair core");
 						}
@@ -812,21 +840,21 @@ public class harryPottorGame extends JFrame
 							wd.setCore(wd.getCore() + "Veela hair core");
 						}
 				}
-				public static void getSize()
+				public static void getLength()
 				{
-					if(t%f==0)
+					if(t%f==1)
 						{
 							wd.setSize(wd.getSize() + 11);
 						}
-					else if(t%f==1)
+					else if(t%f==2)
 						{
 							wd.setSize(wd.getSize() + 13);
 						}
-					else if(t%f==2)
+					else if(t%f==3)
 						{
 							wd.setSize(wd.getSize() + 9);
 						}
-					else if(t%f==3)
+					else if(t%f==4)
 						{
 							wd.setSize(wd.getSize() + 10);
 						}
@@ -861,75 +889,331 @@ public class harryPottorGame extends JFrame
 				public static void buyWand() throws InterruptedException
 				{
 					wiz.setWand(wd);
-					System.out.println("ah I think I've got it, Olivander said");
-					System.out.println("he hands you another wand");
-					System.out.println("as you grab the wand the air around you glows a faint yellow.");
-					System.out.println("I knew that was the one, its made of " + wd.getWood() + " with a " + wd.getCore() + ", " + wd.getSize() + "inches, " + wd.getStability());	
-					Thread.sleep(10000);
+					JOptionPane.showMessageDialog(frame,"ah I think I've got it, Olivander said");
+					JOptionPane.showMessageDialog(frame,"he hands you another wand");
+					JOptionPane.showMessageDialog(frame,"as you grab the wand the air around you glows a faint yellow.");
+					JOptionPane.showMessageDialog(frame,"I knew that was the one, its made of " + wd.getWood() + " with a " + wd.getCore() + ", " + wd.getSize() + "inches, " + wd.getStability());	
+					Thread.sleep(1000);
 				}
 				public static void lookForBook() throws InterruptedException
 				{
-					System.out.println("now that you have your wand you should head over to Flourish and blotts and get your first spell Book. ");
+					JOptionPane.showMessageDialog(frame,"now that you have your wand you should head over to Flourish and blotts and get your first spell Book. ");
 					Thread.sleep(1000);
-					System.out.println("your walking over...");
-					for (int i=0; i<(Math.random() * 10) + 5; i++)
+					JOptionPane.showMessageDialog(frame,"your walking over...");
+					for (int i=0; i<(Math.random() * 2) + 5; i++)
 						{
 							Thread.sleep(950);
 							System.out.println(".");
 						}
-					System.out.println("another first year? a women said standing behind a desk at the back of the shop.");
+					JOptionPane.showMessageDialog(frame,"another first year? a women said standing behind a desk at the back of the shop.");
 					Thread.sleep(950);
-					System.out.println("well it looks like you need your standered school books.");
+					JOptionPane.showMessageDialog(frame,"well it looks like you need your standered school books.");
 					Thread.sleep(950);
-					System.out.println("the lady walks over to you with a giant stack of books.");
-					System.out.println("you notice the first book on the top of the stack it says Standered Book of Spells. Grade 1.");
+					JOptionPane.showMessageDialog(frame,"the lady walks over to you with a giant stack of books.");
+					JOptionPane.showMessageDialog(frame,"you notice the first book on the top of the stack it says Standered Book of Spells. Grade 1.");
 					sb.setName(sb.getName() + "Standered book of spells. Grade 1");
 				}	
 				public static void hogwartsExpress() throws InterruptedException
 				{
-					System.out.println("you arrive at platform nine and three quaters.");
-					System.out.println("you load all of the stuff in the train except your new wand and your spell book");
-					System.out.println("as you sit in your cart eating candy off the trolly your read Standered book of spells grade one");
-					System.out.println("the first spell you see is the incendio charm");
+					JOptionPane.showMessageDialog(frame,"you arrive at platform nine and three quarters.");
+					JOptionPane.showMessageDialog(frame,"you load all of the stuff in the train except your new wand and your spell book");
+					JOptionPane.showMessageDialog(frame,"as you sit in your cart eating candy off the trolley your read Standered book of spells grade one");
+					JOptionPane.showMessageDialog(frame,"the first spell you see is the incendio charm");
 					Thread.sleep(950);
-					System.out.println("listed next to the charm is a description of how it works");
+					JOptionPane.showMessageDialog(frame,"listed next to the charm is a description of how it works");
 					Thread.sleep(950);
-					System.out.println("Incendio is a charm and a form of Conjuration that can be used to conjure a jet of orange and red flames, therefore setting things on fire.");
-					Thread.sleep(3000);
-					System.out.println("listed below is the motion you need to make with your wand in order to cast this spell.");
-					System.out.println("(1), (2), (3), (5)");					
+					JOptionPane.showMessageDialog(frame,"Incendio is a charm and a form of Conjuration that can be used to conjure a jet of orange and red flames, therefore setting things on fire.");
+					Thread.sleep(1000);
+					JOptionPane.showMessageDialog(frame,"listed below is the motion you need to make with your wand in order to cast this spell.");
+					JOptionPane.showMessageDialog(frame,"(1), (2), (3), (5)");					
 				}
 				public static void squidEncounter() throws InterruptedException
 				{
-					System.out.println("as you step out of the train you see a big man with a lanter yelling");
-					System.out.println("first years! first years! over here.");
-					Thread.sleep(2000);
-					System.out.println("you make your way to the giant man who introduced himself as hagrid.");
-					Thread.sleep(2000);
-					System.out.println("he escorts you to a small fleet of boats docked by the lake.");
-					Thread.sleep(2000);
-					System.out.println("you get in and make your way across the lake...");
-					for (int i=0; i<(Math.random() * 10) + 5; i++)
+					JOptionPane.showMessageDialog(frame,"as you step out of the train you see a big man with a lantern yelling");
+					JOptionPane.showMessageDialog(frame,"first years! first years! over here.");
+					Thread.sleep(1000);
+					JOptionPane.showMessageDialog(frame,"you make your way to the giant man who introduced himself as Hagrid.");
+					Thread.sleep(1000);
+					JOptionPane.showMessageDialog(frame,"he escorts you to a small fleet of boats docked by the lake.");
+					Thread.sleep(1000);
+					JOptionPane.showMessageDialog(frame,"you get in and make your way across the lake...");
+					for (int i=0; i<(Math.random() * 5) + 5; i++)
 						{
 							Thread.sleep(900);
 							System.out.println(".");
 						}
-					System.out.println("about half way accross the lake there was a huge roar.");
-					System.out.println("the sound of kids screaming and water splashing was about all you made sence of.");
-					System.out.println("on instinct however you took out your wand.");
-					System.out.println("as you did you saw the giant tenticale of a giant squid.");
-					Thread.sleep(4000);
-					System.out.println("please type the combanation of which spell you would like to cast");
-					int spell = userInput.nextInt();
-					if (spell==1235)
+					JOptionPane.showMessageDialog(frame,"about half way across the lake there was a huge roar.");
+					JOptionPane.showMessageDialog(frame,"the sound of kids screaming and water splashing was about all you made sense of.");
+					JOptionPane.showMessageDialog(frame,"on instinct however you took out your wand.");
+					JOptionPane.showMessageDialog(frame,"as you did you saw the giant tentacle of a giant squid.");
+					Thread.sleep(1000);
+					spell = JOptionPane.showInputDialog("please type the combination of which spell you would like to cast");
+					if (spell.equals("1235"))
 						{
-							System.out.println("Incendio!");
+							JOptionPane.showMessageDialog(frame,"Incendio!");
 						}
 					else 
 						{
-							System.out.println("thats not a spell you died. go to last check point");
+							JOptionPane.showMessageDialog(frame,"thats not a spell you died. go to last check point");
 							squidEncounter();
 						}
+					JOptionPane.showMessageDialog(frame,"you hit the squids tentacle and it burst into flames he quickly submerged and roared away");
+					Thread.sleep(1000);
+					JOptionPane.showMessageDialog(frame,"aya good job " + wiz.getName() + " Hagrid said");
+					JOptionPane.showMessageDialog(frame,"well shall we continue");
+					JOptionPane.showMessageDialog(frame,"you continue to make your way to the Castle");
 				}
+				public static void hogwarts() throws InterruptedException
+				{
+					Thread.sleep(1000);
+					JOptionPane.showMessageDialog(frame,"your stopped in front of the entrance to the Great Hall by a professor");
+					JOptionPane.showMessageDialog(frame,"Hello, I am professor Tomis");
+					JOptionPane.showMessageDialog(frame,"very soon now you will be put into one of the four houses.");
+					JOptionPane.showMessageDialog(frame,"oh thats our cue. follow me");
+					Thread.sleep(2000);
+					JOptionPane.showMessageDialog(frame,"your small group of first years stands in front of all the professors waiting for there name to be called");
+					JOptionPane.showMessageDialog(frame,"Sara!");
+					Thread.sleep(2000);
+					JOptionPane.showMessageDialog(frame,"Hufflepuff!");
+					Thread.sleep(500);
+					JOptionPane.showMessageDialog(frame,"Robert!");
+					Thread.sleep(2000);
+					JOptionPane.showMessageDialog(frame,"Gryffindor!");
+					Thread.sleep(500);
+					JOptionPane.showMessageDialog(frame,"Austin!");
+					JOptionPane.showMessageDialog(frame,"Slytherin!");
+					Thread.sleep(1000);
+					JOptionPane.showMessageDialog(frame,wiz.getName() + "!");
+					JOptionPane.showMessageDialog(frame,"you walk up, sit on the stool, and put the beat up hat on your head");
+				}
+				public static void ble()
+				{
+					if (e>i)
+						{
+							Integer.toString(e);
+							EorI = "e";
+						}	
+					else
+						{
+							Integer.toString(i);
+							EorI = "i";
+						}					
+				}
+				public static void bwa()
+					{
+						if (s>n)
+							{
+								Integer.toString(s);
+								NorS = "s";
+							}	
+						else
+							{
+								Integer.toString(n);
+								NorS = "n";
+							}				
+					}
+				public static void bleBle()
+					{
+						if (t>f)
+							{
+								Integer.toString(t);
+								TorF = "t";
+							}	
+						else
+							{
+								Integer.toString(f);
+								TorF = "f";
+							}					
+					}
+					public static void bwaBwa()
+						{
+							if (p>j)
+								{
+									Integer.toString(p);
+									JorP = "p";
+								}	
+							else
+								{
+									Integer.toString(j);
+									JorP = "j";
+								}	
+							JOptionPane.showMessageDialog(frame,temp);
+						}
+					public static void houseThing()
+					{
+						if (temp.equals("istj"))
+							{
+								JOptionPane.showMessageDialog(frame,"Ravenclaw!");
+								wiz.setHouse(wiz.getHouse() + "Ravenclaw");
+							}
+						else if (temp.equals("isfj"))
+							{
+								JOptionPane.showMessageDialog(frame,"Hufflepuff!");
+								wiz.setHouse(wiz.getHouse() + "Hufflepuff");
+							}
+						else if (temp.equals("infj"))
+							{
+								JOptionPane.showMessageDialog(frame,"Gryffindor!");
+								wiz.setHouse(wiz.getHouse() + "Gryffindor");
+							}
+						else if (temp.equals("intj"))
+							{
+								JOptionPane.showMessageDialog(frame,"Slytherin!");
+								wiz.setHouse(wiz.getHouse() + "Slytherin");
+							}
+						else if (temp.equals("istp"))
+							{
+								JOptionPane.showMessageDialog(frame,"Ravenclaw");
+								wiz.setHouse(wiz.getHouse() + "Ravenclaw");
+							}
+						else if (temp.equals("isfp"))
+							{
+								JOptionPane.showMessageDialog(frame,"Hufflepuff");
+								wiz.setHouse(wiz.getHouse() + "Hufflepuff");
+							}
+						else if (temp.equals("infp"))
+							{
+								JOptionPane.showMessageDialog(frame,"Gryffindor");
+								wiz.setHouse(wiz.getHouse() + "Gryffindor");
+							}
+						else if (temp.equals("intp"))
+							{
+								JOptionPane.showMessageDialog(frame,"Slytherin");
+								wiz.setHouse(wiz.getHouse() + "Slytherin");
+							}
+						else if (temp.equals("estp"))
+							{
+								JOptionPane.showMessageDialog(frame,"Ravenclaw");
+								wiz.setHouse(wiz.getHouse() + "Ravenclaw");
+							}
+						else if (temp.equals("esfp"))
+							{
+								JOptionPane.showMessageDialog(frame,"Hufflepuff");
+								wiz.setHouse(wiz.getHouse() + "Hufflepuff");
+							}
+						else if (temp.equals("enfp"))
+							{
+								JOptionPane.showMessageDialog(frame,"Slytherin");
+								wiz.setHouse(wiz.getHouse() + "Slytherin");
+							}
+						else if (temp.equals("entp"))
+							{
+								JOptionPane.showMessageDialog(frame,"Gryffindor");
+								wiz.setHouse(wiz.getHouse() + "Gryffindor");
+							}
+						else if (temp.equals("estj"))
+							{
+								JOptionPane.showMessageDialog(frame,"Ravenclaw");
+								wiz.setHouse(wiz.getHouse() + "Ravenclaw");
+							}
+						else if (temp.equals("esfj"))
+							{
+								
+								JOptionPane.showMessageDialog(frame,"Hufflepuff");
+								wiz.setHouse(wiz.getHouse() + "Hufflepuff");
+							}
+						else if (temp.equals("enfj"))
+							{
+								JOptionPane.showMessageDialog(frame,"Gryffindor");
+								wiz.setHouse(wiz.getHouse() + "Gryffindor");
+							}
+						else if (temp.equals("entj"))
+							{
+								JOptionPane.showMessageDialog(frame,"Slytherin");
+								wiz.setHouse(wiz.getHouse() + "Slytherin");
+							}
+					}
+					public static void firstClass()
+						{
+							JOptionPane.showMessageDialog(frame,"the next day you look at your first class");	
+							JOptionPane.showMessageDialog(frame,"double Defence against the Dark arts");
+							JOptionPane.showMessageDialog(frame,"the teacher, proffesor Tomis, tells you to open your book to pg 10");
+							JOptionPane.showMessageDialog(frame,"the page is titled basic defensive spells");
+							JOptionPane.showMessageDialog(frame,"the first spell under it is called Aguamenti");
+							JOptionPane.showMessageDialog(frame,"under nieth the name of it is a brief explanation of what it does");
+							JOptionPane.showMessageDialog(frame,"Aguamenti is a charm and a form of Conjuration that can be used to conjure a stream of water that shoots from the users wand, it is mostly used to counter Incendio.");
+							JOptionPane.showMessageDialog(frame,"Proffesor Tomis tells the class what motion you should make with your wand in order to cast the spell");
+							JOptionPane.showMessageDialog(frame,"(1)(2)(6)(7)(g)(f)");
+							JOptionPane.showMessageDialog(frame,"Proffesor Tomis then tells the class how much harder defensive spells are compared to attacking spells");
+							JOptionPane.showMessageDialog(frame,"you really must memorize the combanation and wand movments.");
+						}
+					public static void incendio()
+					{
+						for (int i=0; i<1; i++)
+							{
+								int damage = (int) (Math.random() *5) + 4;
+							}
+					}
+					public static void aguamenti()
+					{
+						int blockChance = (int) (Math.random() * 7) + 0;
+					}
+					public static void firstDuel()
+					{
+						int blockChance = (int) (Math.random() * 7) + 0;
+						int damage = (int) (Math.random() *5) + 3;
+						JOptionPane.showMessageDialog(frame,"we shall practice using the Incendio charm and the Aguamenti charm against each other");
+						JOptionPane.showMessageDialog(frame,"pare up with someone from your own house and begin to duel.");
+						JOptionPane.showMessageDialog(frame,"you pair up with a girl who has bushy red hair and lsightly big teeth she introduced her self as Rose Weasly");
+						JOptionPane.showMessageDialog(frame,"you both stare at each other from oposite sides of the room slightly bow then flick your wands to the side.");
+						rz.setLevel(rz.getLevel()+1);
+						rz.setHealth(rz.getHealth()+20);
+						wiz.setHealth(wiz.getHealth() + 25);
+						JOptionPane.showMessageDialog(frame,"Incendio!");
+						spell = JOptionPane.showInputDialog("you see the giant stream of fire flying at you what do you do");
+						while (rz.getHealth()>0||wiz.getHealth()>0)
+							{
+								if (spell.equals("1235"))
+									{
+										JOptionPane.showMessageDialog(frame,"Incendio!");
+										JOptionPane.showMessageDialog(frame,"the spells bounce off of each other and fly in different directions");
+									}
+								else if (spell.equals("1267gf")) 
+									{
+										if (blockChance>damage)
+											{
+												JOptionPane.showMessageDialog(frame,"Aguamenti!");
+												JOptionPane.showMessageDialog(frame,"a stream of water flies from your wand and dowses the flames in mid air");
+												damage = 0;
+											}
+										else
+											{
+												wiz.setHealth(wiz.getHealth()-damage);
+											}
+									}
+								else 
+									{
+										wiz.setHealth(wiz.getHealth()-damage);
+									}
+								spell = JOptionPane.showInputDialog("now its your turn to cast a spell");
+								if (spell.equals("1235"))
+									{
+										JOptionPane.showMessageDialog(frame,"Incendio!");
+										if (blockChance>damage)
+											{
+												JOptionPane.showMessageDialog(frame,"Aguamenti!");
+												JOptionPane.showMessageDialog(frame,"a stream of water flies from her wand and douces your fire");
+												damage=0;
+											}
+										else 
+										{
+											JOptionPane.showMessageDialog(frame,"the flames hit Rose in the chest and she flies back but the only look on her face is one of humor");
+											rz.setHealth(rz.getHealth()-damage);
+										}
+								
+									}
+								else if (spell.equals("1267gf")) 
+									{
+										JOptionPane.showMessageDialog(frame,"Aguamenti!");
+										JOptionPane.showMessageDialog(frame,"there is no effect");
+									}
+								else 
+									{
+										JOptionPane.showMessageDialog(frame,"that is not a spell you gave up your turn");
+									}
+							}
+						
+						
+					}
 			}
 

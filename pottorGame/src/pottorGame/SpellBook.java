@@ -2,28 +2,32 @@ package pottorGame;
 public class SpellBook
 {
 	String name;
-	String spells;
+	spell spell;
 	
-		public SpellBook (String n, String s)
+		public SpellBook (String n, spell sp)
 			{
 			name = n;
-			spells = s;
+			spell = sp;
 			}
 
-		public String getName() {
-			return name;
-		}
+		public String getName()
+			{
+				return name;
+			}
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		public void setName(String name)
+			{
+				this.name = name;
+			}
 
-		public String getSpells() {
-			return spells;
-		}
+		public spell getSpell()
+			{
+				return spell;
+			}
 
-		public void setSpells(String spells) {
-			this.spells = spells;
-		}
+		public void setSpell(spell spell)
+			{
+				this.spell = spell;
+			}
 
 }

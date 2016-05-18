@@ -84,6 +84,7 @@ public class harryPottorGame extends JFrame
 						houseThing();
 						firstClass();
 						firstDuel();
+						duel();
 					}
 				public static void fillName() throws InterruptedException
 					{
@@ -1232,8 +1233,128 @@ public class harryPottorGame extends JFrame
 						JOptionPane.showMessageDialog(frame,"you both stare at each other from oposite sides of the room slightly bow then flick your wands to the side.");
 						rz.setLevel(rz.getLevel()+1);
 						rz.setHealth(rz.getHealth()+20);
-						wiz.setHealth(wiz.getHealth() + 25);
-						JOptionPane.showMessageDialog(frame,"Incendio!");
+						wiz.setHealth(rz.getHealth() + 25);
+					}
+					public static void duel()
+					{
+						int attack = 0;
+						int defence = 0;
+						int block = 0;
+						int opattack = 0;
+						boolean duel = true, playerTurn = true;;
+						ImageIcon icon6 = new ImageIcon(("fireball.jpg"));
+						ImageIcon icon7 = new ImageIcon(("waterstream.jpg"));
+						ImageIcon icon8 = new ImageIcon(("firewater.jpg"));
+						ImageIcon icon9 = new ImageIcon(("fireballexpolsion.jpg"));
+						while (wiz.getHealth()!=0||rz.getHealth()!=0)
+							{								
+							while(duel)
+								{				
+								if(playerTurn)
+									{
+										JOptionPane.showMessageDialog(frame, "now its your turn to cast a spell.");
+										spell = JOptionPane.showInputDialog("please type the combination of which spell you would like to cast int the box below");
+										if(spell.equals("1235"))
+											{
+												JOptionPane.showMessageDialog(frame, "Incendio!!",
+														name, JOptionPane.QUESTION_MESSAGE,
+														icon6);
+												JOptionPane.showMessageDialog(frame, "you shoot the fire spell at Rose");
+												attack = (int) (Math.random() * 6) + 1;
+												defence = (int) (Math.random() * 2) + 2;
+												if (attack>defence)
+													{
+														rz.setHealth(rz.getHealth()-attack);
+														JOptionPane.showMessageDialog(frame, "Aguamen...");
+														JOptionPane.showMessageDialog(frame, "the spell hit Rose streat in the chest before she could cast the counter Charm");
+														JOptionPane.showMessageDialog(frame, "you did " + attack + "damage, she now has " + rz.getHealth() + " health");
+													}
+												else 
+													{
+														JOptionPane.showMessageDialog(frame, "Aguamenti",
+																name, JOptionPane.QUESTION_MESSAGE,
+																icon8);
+														JOptionPane.showMessageDialog(frame, "the spell was doused by the counter charm Aguamenti");
+													}
+												playerTurn = false;
+												duel = true;
+											}
+										else if(spell.equals("1167gmnt"))
+											{
+												JOptionPane.showMessageDialog(frame, "Aguamenti!!",
+														name, JOptionPane.QUESTION_MESSAGE,
+														icon7);
+												JOptionPane.showMessageDialog(frame, "you shoot some water at Rose");
+												JOptionPane.showMessageDialog(frame, "your spell has no effect");
+												playerTurn = false;
+												duel = true;
+											}
+										else 						
+											{
+												JOptionPane.showMessageDialog(frame, "you forfit your turn");
+												playerTurn = false;
+												duel = true;
+											}					
+									}
+								else 
+									{
+										JOptionPane.showMessageDialog(frame, "oppenents turn");
+										JOptionPane.showMessageDialog(frame, "Incendio!!",
+												name, JOptionPane.QUESTION_MESSAGE,
+												icon6);
+										JOptionPane.showMessageDialog(frame, "a giant fire ball is flying at you what do you do");
+										spell = JOptionPane.showInputDialog("please type the combination of which spell you would like to cast int the box below");
+										if (spell.equals("1167gmnt"))
+											{
+												JOptionPane.showMessageDialog(frame, "Aguamenti!!",
+														name, JOptionPane.QUESTION_MESSAGE,
+														icon7);
+												opattack = (int) (Math.random() * 6) + 1;
+												block = (int) (Math.random() * 5) + 3;
+												if (block>opattack)
+													{
+														JOptionPane.showMessageDialog(frame, "your spell douces her flames in mid air.",
+																name, JOptionPane.QUESTION_MESSAGE,
+																icon8);
+													}
+												playerTurn = true;
+												duel = true;									
+											}
+										else if (spell.equals("1235"))
+											{
+												JOptionPane.showMessageDialog(frame, "Incendio!!",
+														name, JOptionPane.QUESTION_MESSAGE,
+														icon7);
+												JOptionPane.showMessageDialog(frame, "your spell hits hers in mid air and flames go everywere, some even hit you.",
+														name, JOptionPane.QUESTION_MESSAGE,
+														icon9);
+												block = (int) (Math.random() * 3) + 1;
+												opattack = (int) (Math.random() * 6) + 1 - block;
+												wiz.setHealth(wiz.getHealth()-attack);
+												
+												playerTurn = true;
+												duel = true;
+											}
+										else 
+											{
+												JOptionPane.showMessageDialog(frame, "uuu...");
+												opattack = (int) (Math.random() * 6) + 1;
+												wiz.setHealth(wiz.getHealth()-attack);
+												playerTurn = true;
+												duel = true;
+											}
+									}
+								}
+							if (rz.getHealth()==0)
+							{
+								JOptionPane.showMessageDialog(frame, "you win");
+							}
+							else
+							{
+								JOptionPane.showMessageDialog(frame, "you loose");
+							}
+							}
+						
 					}
 			}
 
